@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en" lang="en">
+  <head>
+    <link href="styles.css" type="text/css" rel="stylesheet" />
+    <meta name="description" content="This is a page written by Liem Nguyen" />
+    <title>Liem's Page</title>
+  </head>
+  <body>
+    <h1>Flexbox CSS</h1>
+    <h2># align-content</h2>
+    <h3>align-content: stretch</h3>
+    <div class="grid-container" style="height: 300px; align-content: stretch">
+      <p>1</p>
+      <p style="height: 100px">2</p>
+      <p>3</p>
+      <p>4</p>
+      <p>5</p>
+    </div>
+    <h3>align-content: flex-start</h3>
+    <div
+      class="grid-container"
+      style="height: 300px; align-content: flex-start"
+    >
+      <p>1</p>
+      <p style="height: 100px">2</p>
+      <p>3</p>
+      <p>4</p>
+      <p>5</p>
+    </div>
+    <h3>align-content: flex-end</h3>
+    <div class="grid-container" style="height: 300px; align-content: flex-end">
+      <p>1</p>
+      <p style="height: 100px">2</p>
+      <p>3</p>
+      <p>4</p>
+      <p>5</p>
+    </div>
+    <h3>align-content: flex-center</h3>
+    <div
+      class="grid-container"
+      style="height: 300px; align-content: flex-center"
+    >
+      <p>1</p>
+      <p style="height: 100px">2</p>
+      <p>3</p>
+      <p>4</p>
+      <p>5</p>
+    </div>
+    <h3>align-content: space-between</h3>
+    <div
+      class="grid-container"
+      style="height: 300px; align-content: space-between"
+    >
+      <p>1</p>
+      <p style="height: 100px">2</p>
+      <p>3</p>
+      <p>4</p>
+      <p>5</p>
+    </div>
+    <h3>align-content: space-around</h3>
+    <div
+      class="grid-container"
+      style="height: 300px; align-content: space-around"
+    >
+      <p>1</p>
+      <p style="height: 100px">2</p>
+      <p>3</p>
+      <p>4</p>
+      <p>5</p>
+    </div>
+    <h2>align-items</h2>
+    <h3>align-items: flex-start</h3>
+    <div
+      class="grid-container flex-items"
+      style="height: 300px; align-items: flex-start"
+    >
+      <p>1</p>
+      <p style="height: 150px">2</p>
+      <p>3</p>
+      <p style="height: 100px">4</p>
+      <p>5</p>
+      </div>
+    <h3>align-items: flex-end</h3>
+    <div
+      class="grid-container flex-items"
+      style="height: 300px; align-items: flex-end"
+    >
+      <p>1</p>
+      <p style="height: 150px">2</p>
+      <p>3</p>
+      <p style="height: 100px">4</p>
+      <p>5</p>
+    </div>
+    <h3>align-items: center</h3>
+    <div
+      class="grid-container flex-items"
+      style="height: 300px; align-items: center"
+    >
+      <p>1</p>
+      <p style="height: 150px">2</p>
+      <p>3</p>
+      <p style="height: 100px">4</p>
+      <p>5</p>
+</div>
+    <h3>align-items: baseline</h3>
+    <div
+      class="grid-container flex-items"
+      style="height: 300px; align-items: baseline"
+    >
+      <p>1</p>
+      <p style="height: 150px">2</p>
+      <p>3</p>
+      <p style="height: 100px">4</p>
+      <p>5</p>
+    </div>
+    <h3>align-items: stretch</h3>
+    <div
+      class="grid-container flex-items"
+      style="height: 300px; align-items: stretch"
+    >
+      <p style="height: auto;">1</p>
+      <p style="height: auto">2</p>
+      <p style="height: auto;">3</p>
+      <p style="height: auto">4</p>
+      <p style="height: auto;">5</p>
+      </div>
+    <h2>align-self</h2>
+    <h3>align-self: auto</h3>
+    <div
+      class="grid-container flex-items"
+      style="height: 300px; align-items: center"
+    >
+      <p>1</p>
+      <p style="align-self: auto; background-color: var(--fourth)">
+        target
+      </p>
+      <p>3</p>
+      <p style="height: 100px">4</p>
+      <p>5</p>
+    </div>
+    <h3>align-self: flex-start</h3>
+    <div
+      class="grid-container flex-items"
+      style="height: 300px; align-items: center"
+    >
+      <p>1</p>
+      <p style="align-self: flex-start; background-color: var(--fourth)">
+        target
+      </p>
+      <p>3</p>
+      <p style="height: 100px">4</p>
+      <p>5</p>
+      </div>
+    <h3>align-self: flex-end</h3>
+    <div
+      class="grid-container flex-items"
+      style="height: 300px; align-items: center"
+    >
+      <p>1</p>
+      <p style="align-self: flex-end; background-color: var(--fourth)">
+        target
+      </p>
+      <p>3</p>
+      <p style="height: 100px">4</p>
+      <p>5</p>
+    </div>
+    <h3>align-self: center</h3>
+    <div
+      class="grid-container flex-items"
+      style="height: 300px; align-items: flex-start"
+    >
+      <p>1</p>
+      <p style="align-self: center; background-color: var(--fourth)">
+        target
+      </p>
+      <p>3</p>
+      <p style="height: 100px">4</p>
+      <p>5</p>
+      </div>
+    <h3>align-self: baseline</h3>
+    <div
+      class="grid-container flex-items"
+      style="height: 300px; align-items: center"
+    >
+      <p>1</p>
+      <p style="align-self: baseline; background-color: var(--fourth)">
+        target
+      </p>
+      <p>3</p>
+      <p style="height: 100px">4</p>
+      <p>5</p>
+      </div>
+    <h3>align-self: stretch</h3>
+    <div
+      class="grid-container flex-items"
+      style="height: 300px; align-items: center"
+    >
+      <p>1</p>
+      <p style="align-self: stretch; background-color: var(--fourth); height: auto;">
+        target
+      </p>
+      <p>3</p>
+      <p style="height: 100px">4</p>
+      <p>5</p>
+    </div>
+    <h2>flex-basis</h2>
+    <h3>flex-basis: auto</h3>
+    <div
+      class="grid-container flex-basis"
+      style="height: 300px; align-items: center"
+    >
+      <p style="flex-basis: auto;">Flexbox Item</p>
+    </div>
+    <h3>flex-basis: 80px</h3>
+    <div
+      class="grid-container flex-basis"
+      style="height: 300px; align-items: center"
+    >
+      <p style="flex-basis: 85px;">Flexbox Item</p>
+    </div>
+  </body>
+</html>
