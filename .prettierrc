@@ -1,0 +1,9 @@
+{
+    "useTabs": false,
+    "trailingComma": "es5",
+    "tabWidth": 4,
+    "semi": false,
+    "singleQuote": true,
+    "linebreak-style": 1,
+    "trim_trailing_whitespace": true
+}
