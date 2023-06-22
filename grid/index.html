@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="./styles.css" />
+    </head>
+    <body>
+        <header class="header">
+            <h1># Grid</h1>
+            <h2>
+                <i>
+                    CSS Grid Layout provides a two dimensional layout system,
+                    controlling layout in rows and columns. In this module
+                    discover everything grid has to offer.
+                </i>
+            </h2>
+        </header>
+        <main class="content">
+            <article class="article">
+                <header>
+                    <h2># Grid Container (unit <code>fr</code>)</h2>
+                </header>
+                <div class="container first-container">
+                    <div class="item"><p>1fr</p></div>
+                    <div class="item"><p>3fr</p></div>
+                    <div class="item"><p>2fr</p></div>
+                    <div class="item"><p>nothing</p></div>
+                    <div class="item"><p>something</p></div>
+                </div>
+
+                <section>
+                    <header>
+                        <h2># Intrinsic sizing keywords</h2>
+                    </header>
+                    <h3>
+                        <code> auto </code>
+                    </h3>
+                    <div class="container auto">
+                        <div class="item">
+                            <p>
+                                In addition to the length and percentage
+                                dimensions as described in the secti
+                            </p>
+                        </div>
+                        <div class="item">
+                            <p>
+                                In addition to the length and percentage
+                                dimensions as described in the section on sizing
+                                units, grid tracks can use intrinsic sizing
+                                keywords. These keywords are defined in the Box
+                                Sizing specification and add additional methods
+                                of sizing boxes in CSS, not just grid tracks.
+                            </p>
+                        </div>
+                        <div class="item">
+                            <p>
+                                In addition to the length and percentage
+                                dimensions as described in the section on sizing
+                                units.
+                            </p>
+                        </div>
+                        <div class="item"><p>4</p></div>
+                        <div class="item"><p>5</p></div>
+                    </div>
+                    <h3>
+                        <code> min-content </code>
+                    </h3>
+                    <div class="container min-content">
+                        <div class="item">
+                            <p>
+                                In addition to the length and percentage
+                                dimensions as described in the secti
+                            </p>
+                        </div>
+                        <div class="item">
+                            <p>
+                                In addition to the length and percentage
+                                dimensions as described in the sect
+                            </p>
+                        </div>
+                        <div class="item">
+                            <p>In addition to the</p>
+                        </div>
+                        <div class="item"><p>4</p></div>
+                        <div class="item"><p>5</p></div>
+                    </div>
+                    <h3>
+                        <code> max-content </code>
+                    </h3>
+                    <div class="container max-content">
+                        <div class="item">
+                            <p>
+                                In addition to the length and percentage
+                                dimensions as described in the section.
+                            </p>
+                        </div>
+                        <div class="item">
+                            <p>In addition</p>
+                        </div>
+                        <div class="item">
+                            <p>
+                                In addition to the length and percentage
+                                dimensions as described in the section on sizing
+                                units.
+                            </p>
+                        </div>
+                        <div class="item"><p>4</p></div>
+                        <div class="item"><p>5</p></div>
+                    </div>
+                    <h3>
+                        <code> fit-content(12em) </code>
+                    </h3>
+                    <div class="container fit-content">
+                        <div class="item">
+                            <p>
+                                In addition to the length and percentage
+                                dimensions as described in the secti
+                            </p>
+                        </div>
+                        <div class="item">
+                            <p>
+                                In addition to the length and percentage
+                                dimensions as described in the section on sizing
+                                units, grid tracks can use intrinsic sizing
+                                keywords. These keywords are defined in the Box
+                                Sizing specification and add additional methods
+                                of sizing boxes in CSS, not just grid tracks.
+                            </p>
+                        </div>
+                        <div class="item">
+                            <p>In addition to the length</p>
+                        </div>
+                        <div class="item"><p>4</p></div>
+                        <div class="item"><p>5</p></div>
+                    </div>
+                </section>
+
+                <section>
+                    <header>
+                        <h2># minmax function()</h2>
+                    </header>
+                    <h3>
+                        <code> repeat( 12 ,minmax(0, 1fr) ) </code>
+                    </h3>
+                    <div class="container minmax-function">
+                        <div class="item"><p>1</p></div>
+                        <div class="item"><p>2</p></div>
+                        <div class="item"><p>4</p></div>
+                        <div class="item"></div>
+                        <div class=""></div>
+                        <div class="item"><p>5</p></div>
+                        <div class="item"><p>In addition to the length</p></div>
+                        <div class=""></div>
+                        <div class="item">
+                            <p>
+                                In addition to the length and percentage
+                                dimensions as described in the secti
+                            </p>
+                        </div>
+                        <div class="item">
+                            <p>
+                                In addition to the length and percentage
+                                dimensions as described in the section on sizing
+                                units, grid tracks can use intrinsic sizing
+                                keywords. These keywords are defined in the Box
+                                Sizing specification and add additional methods
+                                of sizing boxes in CSS, not just grid tracks.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <header>
+                        <h2># auto-fill auto-fit</h2>
+                    </header>
+                    <h3>
+                        <code> auto-fill minmax(200px, 1fr) </code>
+                    </h3>
+                    <div class="container auto-fill">
+                        <div class="item"><p>1</p></div>
+                        <div class="item"><p>2</p></div>
+                        <div class="item"><p>3</p></div>
+                    </div>
+                    <h3>
+                        <code> auto-fit minmax(200px, 1fr) </code>
+                    </h3>
+                    <div class="container auto-fit">
+                        <div class="item"><p>1</p></div>
+                        <div class="item"><p>2</p></div>
+                        <div class="item"><p>3</p></div>
+                    </div>
+                </section>
+
+                <section>
+                    <header>
+                        <h2># Item placement</h2>
+                    </header>
+                    <h3>
+                        <code>grid-area</code> &
+                        <code>grid-auto-flow: dense</code>
+                    </h3>
+                    <div class="container second-container">
+                        <div class="item item--1">1</div>
+                        <div class="item item--2">2</div>
+                        <div class="item item--3">3</div>
+                        <div class="item item--4">4</div>
+                        <div class="item item--5">5</div>
+                        <div class="item item--6">6</div>
+                        <div class="item item--7">7</div>
+                    </div>
+                </section>
+            </article>
+        </main>
+        <footer class="footer"><h2># This just a footer</h2></footer>
+    </body>
+</html>
