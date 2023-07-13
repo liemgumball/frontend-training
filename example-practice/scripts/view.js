@@ -1,19 +1,19 @@
+import Table from "./components/table";
 class View {
     constructor() {
-        this.table = document.querySelector('tbody');
+        this.main = document.querySelector('main');
+        this.table_html = document.querySelector('table');
     }
 
-    renderData(datalist) {
+    
+    render(datalist) {
+        this.renderTable(datalist)
+    }
+
+    renderTable(datalist) {
         console.log(datalist)
-        const html = datalist.map((data) => 
-            `
-            <tr class="table-body">
-                <td class="table-data">${data.name}</td>
-            </tr>
-            `
-        )
-        this.table.innerHTML = html.join("")
+        this.table = new Table(datalist)
+        this.table_html.appendChild(this.table.render());
     }
-
 }
 export default View
