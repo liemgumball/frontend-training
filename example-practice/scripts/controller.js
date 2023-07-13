@@ -1,4 +1,5 @@
 
+import Table from "./components/table"
 class Controller {
     constructor(view, services) {
         this.view = view
@@ -10,12 +11,13 @@ class Controller {
     }
 
     handleRenderTable = async () => {
-        try {
+        // try {
           const data = await this.services.getData();
-          this.view.renderData(data);
-        } catch (error) {
-          console.error('Error fetching data:', error); // TODO: update later
-        }
+          this.view.render(data);
+          const test = new Table(data)
+        // } catch (error) {
+        //   console.error('Error fetching data:', error); // TODO: update later
+        // }
       };
 }
 
