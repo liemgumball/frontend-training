@@ -15,6 +15,7 @@ class Controller {
           const data = await this.services.getData();
           this.view.render(data);
           const test = new Table(data)
+          await this.services.testData()
         // } catch (error) {
         //   console.error('Error fetching data:', error); // TODO: update later
         // }
