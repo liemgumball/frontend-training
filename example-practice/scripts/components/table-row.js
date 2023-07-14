@@ -34,11 +34,11 @@ class TableRow {
         <div class="img-container">   
             <img src=${this.avatar} alt="avatar" />
         </div>
-    </td>
-    <td class="table-data">${this.name}</td>
-    <td class="table-data">${this.country}</td>
-    <td class="table-data">
-    </td>
+        </td>
+            <td class="table-data">${this.name}</td>
+            <td class="table-data">${this.country}</td>
+            <td class="table-data">
+        </td>
     `
 
     html_row.lastElementChild.appendChild(this.action_btn)

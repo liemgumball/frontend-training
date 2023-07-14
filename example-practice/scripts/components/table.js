@@ -11,6 +11,7 @@ class Table {
         const html = document.createElement('tbody')
         this.rows.forEach(element => {
             html.appendChild(element.render())
+            
         })
         return html
     }
