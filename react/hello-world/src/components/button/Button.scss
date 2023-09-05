@@ -19,4 +19,8 @@
   .label {
     font-size: 16px;
   }
+
+  &:disabled {
+    background-color: #333;
+  }
 }

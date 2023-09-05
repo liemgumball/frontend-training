@@ -2,13 +2,14 @@ import './Button.scss'
 import React from 'react'
 
 type ButtonProps = {
+  disabled?: boolean
   onClick: () => void
   children?: React.ReactNode
 }
 
-const Button: React.FC<ButtonProps> = ({ onClick, children }) => {
+const Button: React.FC<ButtonProps> = ({ disabled, onClick, children }) => {
   return (
-    <button className="button" onClick={onClick}>
+    <button disabled={disabled} className="button" onClick={onClick}>
       {children}
     </button>
   )
