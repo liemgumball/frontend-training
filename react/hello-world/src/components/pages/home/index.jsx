@@ -17,10 +17,8 @@ const Home = () => {
     <div className="home">
       <h1>My example</h1>
       <h2>{counter}</h2>
-      <div className="button-group">
-        <Button onClick={handleDecrement} icon={<FaMinus />} label="Minus" />
-        <Button onClick={handleIncrement} icon={<FaPlus />} label="Add" />
-      </div>
+      <Button onClick={handleDecrement} icon={<FaMinus />} label="Minus" />
+      <Button onClick={handleIncrement} icon={<FaPlus />} label="Add" />
     </div>
   )
 }

@@ -12,11 +12,11 @@ const Header = () => {
           <li className={location.pathname === '/' ? 'active' : ''}>
             <Link to="/">Home</Link>
           </li>
-          <li className={location.pathname === '/about' ? 'active' : ''}>
-            <Link to="/about">About</Link>
+          <li className={location.pathname === '/stopwatch' ? 'active' : ''}>
+            <Link to="/stopwatch">Stopwatch</Link>
           </li>
-          <li className={location.pathname === '/contact' ? 'active' : ''}>
-            <Link to="/contact">Contact</Link>
+          <li className={location.pathname === '/cats' ? 'active' : ''}>
+            <Link to="/cats">Cats</Link>
           </li>
         </ul>
       </nav>
