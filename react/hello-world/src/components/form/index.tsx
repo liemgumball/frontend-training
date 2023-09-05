@@ -1,18 +1,18 @@
-import React, { useRef, useState } from 'react'
+import { useRef, useState } from 'react'
 
-const Form = () => {
-  const emailRef = useRef()
-  const passwordRef = useRef()
+const Form: React.FC = () => {
+  const emailRef = useRef<HTMLInputElement | null>(null)
+  const passwordRef = useRef<HTMLInputElement | null>(null)
   const [info, setInfo] = useState('')
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     console.log({
-      email: emailRef.current.value,
-      password: passwordRef.current.value,
+      email: emailRef.current?.value,
+      password: passwordRef.current?.value,
     })
 
-    setInfo(emailRef.current.value + ' ' + passwordRef.current.value)
+    setInfo(emailRef.current?.value + ' ' + passwordRef.current?.value)
   }
 
   return (
