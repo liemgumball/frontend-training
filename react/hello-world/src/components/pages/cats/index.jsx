@@ -1,6 +1,7 @@
 import { useRef, useState } from 'react'
 import { flushSync } from 'react-dom'
 import './Cat.scss'
+import Button from '../../button'
 
 const Cats = () => {
   const selectedRef = useRef(null)
@@ -9,7 +10,7 @@ const Cats = () => {
   return (
     <div className="cats">
       <nav>
-        <button
+        <Button
           onClick={() => {
             flushSync(() => {
               if (index < catList.length - 1) {
@@ -24,9 +25,8 @@ const Cats = () => {
               inline: 'center',
             })
           }}
-        >
-          Next
-        </button>
+          label="Next"
+        />
       </nav>
       <div>
         <ul className="cats-list">

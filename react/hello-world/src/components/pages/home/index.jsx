@@ -6,20 +6,20 @@ import Button from '../../button'
 const Home = () => {
   const [counter, setCounter] = useState(0)
 
-  const handleIncrement = () => {
-    setCounter(counter + 1)
-  }
-
-  const handleDecrement = () => {
-    setCounter(counter - 1)
+  const handleAdjust = (amount) => {
+    setCounter((current) => current + amount)
   }
   return (
     <div className="home">
       <h1>My example</h1>
       <h2>{counter}</h2>
       <div className="button-group">
-        <Button onClick={handleDecrement} icon={<FaMinus />} label="Minus" />
-        <Button onClick={handleIncrement} icon={<FaPlus />} label="Add" />
+        <Button
+          onClick={() => handleAdjust(-1)}
+          icon={<FaMinus />}
+          label="Minus"
+        />
+        <Button onClick={() => handleAdjust(1)} icon={<FaPlus />} label="Add" />
       </div>
     </div>
   )
