@@ -9,6 +9,7 @@ const Home = () => {
   const handleAdjust = (amount) => {
     setCounter((current) => current + amount)
   }
+
   return (
     <div className="home">
       <h1>My example</h1>

@@ -4,6 +4,7 @@ import './Header.scss'
 
 const Header = () => {
   const location = useLocation()
+
   return (
     <header className="header">
       <h1>Welcome to Liem's Website</h1>

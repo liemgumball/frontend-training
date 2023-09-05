@@ -3,8 +3,8 @@ import Button from '../../button'
 import { FaPlay, FaStop } from 'react-icons/fa'
 
 const Stopwatch = () => {
-  const [startTime, setStartTime] = useState(null)
-  const [now, setNow] = useState(null)
+  const [startTime, setStartTime] = useState(0)
+  const [now, setNow] = useState(0)
   const intervalRef = useRef(null)
 
   function handleStart() {
