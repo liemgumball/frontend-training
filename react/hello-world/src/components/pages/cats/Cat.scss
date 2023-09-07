@@ -1,0 +1,16 @@
+.cats {
+  .cats-list {
+    display: flex;
+    gap: 20px;
+    list-style-type: none;
+    overflow-x: scroll;
+
+    li {
+      padding: 20px;
+    }
+  }
+
+  .active {
+    background-color: #333;
+  }
+}
