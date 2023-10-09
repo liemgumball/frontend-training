@@ -1,0 +1,56 @@
+/* taskList.css */
+
+/* Styles for the error message */
+.error {
+  color: red;
+  font-weight: bold;
+}
+
+/* Styles for the loading item */
+.loading-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.glow-checkbox {
+  width: 20px;
+  height: 20px;
+  background-color: #e0e0e0;
+  color: #e0e0e0;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+.glow-text span {
+  display: inline-block;
+  background: #e0e0e0;
+  color: #e0e0e0;
+  border-radius: 4px;
+  line-height: 1;
+  margin-right: 5px;
+}
+
+/* Styles for the empty state message */
+.icon-check {
+  font-size: 24px;
+  color: #32cd32; /* Green color */
+}
+
+.wrapper-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.title-message {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 5px 0;
+}
+
+.subtitle-message {
+  font-size: 14px;
+  color: #888;
+}
