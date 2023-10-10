@@ -16,8 +16,11 @@ const meta = {
   tags: ['autodocs'],
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
-    tasks: { control: 'object' },
     loading: { control: 'boolean' },
+    error: {
+      control: 'select',
+      options: [undefined, { message: 'NOT FOUND' }],
+    },
   },
 } satisfies Meta<typeof TaskList>
 
@@ -37,6 +40,7 @@ export const Default: Story = {
       { ...TaskStories.Default.args.task, id: '6', title: 'Task 6' } as TTask,
     ],
     loading: false,
+    error: undefined,
   },
 }
 

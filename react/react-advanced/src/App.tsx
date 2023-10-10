@@ -1,13 +1,22 @@
-import { useState } from 'react'
+import { Suspense, lazy, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import Loader from './components/Loader'
+import { ErrorBoundary } from 'react-error-boundary'
+import ErrorFallback from './components/ErrorFallback'
+
+const HomePage = lazy(() => delayImport(import('./pages/Home')))
+const AboutPage = lazy(() => delayImport(import('./pages/About')))
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <>
+    <ErrorBoundary
+      FallbackComponent={ErrorFallback}
+      onReset={() => setCount(0)}
+    >
       <div>
         <a href="https://vitejs.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
@@ -28,8 +37,23 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
-    </>
+
+      <div>
+        <Suspense fallback={<Loader />}>
+          <section>
+            <AboutPage />
+            <HomePage count={count} />
+          </section>
+        </Suspense>
+      </div>
+    </ErrorBoundary>
   )
 }
 
 export default App
+
+export const delayImport = async (promise: any) => {
+  return new Promise((resolve) => {
+    setTimeout(resolve, 3000)
+  }).then(() => promise)
+}
