@@ -7,6 +7,4 @@ const Home: React.FC<{ count: number }> = (props) => {
   return <main>Home</main>
 }
 
-Home.whyDidYouRender = { customName: 'Home', logOnDifferentValues: true }
-
 export default Home
