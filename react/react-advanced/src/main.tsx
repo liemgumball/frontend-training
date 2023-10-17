@@ -13,13 +13,13 @@ const onRender: React.ProfilerOnRenderCallback = (
   commitTime, // when React committed this update
   interactions // the Set of interactions belonging to this update
 ) => {
-  console.log('Render ID:', id)
-  console.log('Phase:', phase)
-  console.log('Actual duration:', actualDuration)
-  console.log('Base duration:', baseDuration)
-  console.log('Start time:', startTime)
-  console.log('Commit time:', commitTime)
-  console.log('Interactions:', interactions)
+  // console.log('Render ID:', id)
+  // console.log('Phase:', phase)
+  // console.log('Actual duration:', actualDuration)
+  // console.log('Base duration:', baseDuration)
+  // console.log('Start time:', startTime)
+  // console.log('Commit time:', commitTime)
+  // console.log('Interactions:', interactions)
 }
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
