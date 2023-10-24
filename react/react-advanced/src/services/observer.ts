@@ -1,6 +1,7 @@
 export class Observer {
   private _key: string
-  private _callback: (...args: any[]) => void
+  private _callback: (...args: any[]) => unknown
+  public results: any
 
   constructor(key: string, callback: () => void) {
     this._key = key

@@ -1,49 +1,88 @@
-import { useState, useEffect, useContext } from 'react'
-import { AddObserverContext } from '../contexts/QueryContext'
+import {
+  useState,
+  useEffect,
+  useContext,
+  useCallback,
+  useRef,
+  useMemo,
+} from 'react'
+import {
+  AddObserverContext,
+  RemoveObserverContext,
+} from '../contexts/QueryContext'
 import { Observer } from '../services/observer'
 
 const useQuery = (queryKey: string, queryFn: (...args: any[]) => unknown) => {
+  const callbackRef = useRef(queryFn)
+
   const [result, setResult] = useState<{
-    data?: []
-    isLoading?: boolean
+    data: unknown[]
     error?: Error
+    isFetching?: boolean
+    isLoading?: boolean
     isError?: boolean
-  }>({})
+  }>(defaultResult)
 
   const addObserver = useContext(AddObserverContext)
 
+  const removeObserver = useContext(RemoveObserverContext)
+
+  let count = 0
+
+  const fetchData = useCallback(async () => {
+    try {
+      setResult((current) => ({
+        ...current,
+        isFetching: true,
+        isLoading: count === 0,
+      }))
+
+      const response = await callbackRef.current()
+      if (response)
+        setResult((current) => ({
+          ...current,
+          data: response as [],
+          isError: false,
+        }))
+    } catch (err) {
+      setResult((current) => ({
+        ...current,
+        error: err as Error,
+        isError: true,
+      }))
+    } finally {
+      setResult((current) => ({
+        ...current,
+        isLoading: false,
+        isFetching: false,
+      }))
+
+      console.log(++count)
+    }
+  }, [result])
+
   useEffect(() => {
-    const controller = new AbortController()
+    callbackRef.current = queryFn
 
-    const fetchData = async () => {
-      try {
-        setResult((current) => ({ ...current, isLoading: true }))
-        const response = await queryFn()
-
-        if (response)
-          setResult((current) => ({ ...current, data: response as [] }))
-      } catch (err) {
-        // avoid if it's an aborted request
-        if ((err as Error).name !== 'AbortError') {
-          setResult((current) => ({
-            ...current,
-            error: err as Error,
-            isError: true,
-            isLoading: false,
-          }))
-        }
-      }
+    if (addObserver) {
+      const observer = new Observer(queryKey, fetchData)
+      addObserver(observer)
     }
 
-    const observer = new Observer(queryKey, fetchData)
-    if (addObserver) addObserver(observer)
-
     return () => {
-      controller.abort() // abort the fetch request when the component unmounted or updated.
+      if (removeObserver) removeObserver(queryKey)
     }
   }, [queryFn, queryKey])
 
-  return { ...result } as const
+  return useMemo(() => ({ ...result } as const), [result])
 }
 
 export default useQuery
+
+const defaultResult = {
+  data: [] as unknown[],
+  error: undefined,
+  isFetching: false,
+  isLoading: false,
+  isError: false,
+}

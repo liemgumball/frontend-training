@@ -1,12 +1,13 @@
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import { addStudent, getStudents } from '../services/api'
 
-const Student = () => {
+const Student: React.FC = () => {
   const queryClient = useQueryClient()
 
   const query = useQuery({
     queryKey: ['students'],
     queryFn: getStudents,
+    // refetchInterval: 5000,
   })
 
   // Mutations
@@ -14,7 +15,8 @@ const Student = () => {
     mutationFn: addStudent,
     onSuccess: () => {
       // Invalidate and refetch
-      queryClient.invalidateQueries({ queryKey: ['students'] })
+      // queryClient.invalidateQueries({ queryKey: ['students'] })
+      queryClient.fetchQuery({ queryKey: ['students'] })
     },
   })
 
@@ -24,7 +26,7 @@ const Student = () => {
 
   return (
     <div>
-      <ul>
+      <ul style={{ listStyle: 'none' }}>
         {query.data?.map((item: any) => (
           <li key={item.id}>
             {item.id}
@@ -33,15 +35,13 @@ const Student = () => {
         ))}
       </ul>
       <button
+        disabled={mutation.isLoading}
         onClick={() => {
           mutation.mutate({
             name: 'Test',
-            email: 'liem1762001@gmail.com',
-            phone: '0931009009',
-            enrollNumber: 131231314,
-            createdAt: '2023-09-28T02:50:15.162Z',
             avatar: 'https://loremflickr.com/60/60',
           })
+          console.log(query)
         }}
       >
         Add Student
@@ -49,5 +49,7 @@ const Student = () => {
     </div>
   )
 }
+
+Student.whyDidYouRender = true
 
 export default Student

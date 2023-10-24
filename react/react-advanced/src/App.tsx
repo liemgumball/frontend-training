@@ -53,11 +53,11 @@ function App() {
                 <AboutPage />
                 <HomePage count={count} />
                 <StudentPage />
-                <PaymentPage />
+                {/* <PaymentPage /> */}
               </section>
             </Suspense>
           </div>
-          <ReactQueryDevtools initialIsOpen={false} />
+          {/* <ReactQueryDevtools initialIsOpen={false} /> */}
         </QueryClientProvider>
       </QueryContextProvider>
     </ErrorBoundary>
@@ -70,4 +70,9 @@ export const delayImport = async (promise: any) => {
   return new Promise((resolve) => {
     setTimeout(resolve, 3000)
   }).then(() => promise)
+}
+
+// the implementation
+export function add(...args: number[]) {
+  return args.reduce((a, b) => a + b, 0)
 }
