@@ -1,1 +1,1 @@
-# Internship at Agility IO
+# Frontend Training
